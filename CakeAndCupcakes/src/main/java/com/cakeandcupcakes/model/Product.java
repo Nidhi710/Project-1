@@ -1,12 +1,15 @@
 package com.cakeandcupcakes.model;
 
+
+
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
-
 import org.springframework.web.multipart.MultipartFile;
 
 
@@ -14,13 +17,14 @@ import org.springframework.web.multipart.MultipartFile;
 @Entity
 public class Product {
 	@Id
-	private String id;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer id;
 	private String name;
 	private String desc;
 	private String qty;
 	private int price;
-	private String subcat_id;
-	private String sup_id;
+	private Integer subcat_id;
+	private Integer sup_id;
 	@Transient
 	private MultipartFile img;
 	
@@ -34,11 +38,14 @@ public class Product {
 	@JoinColumn(name="sup_id",insertable=false,updatable=false,nullable=false)
 	Supplier supplier;
 	
-	public String getId() {
+	
+	
+	
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -74,19 +81,19 @@ public class Product {
 		this.price = price;
 	}
 
-	public String getSubcat_id() {
+	public Integer getSubcat_id() {
 		return subcat_id;
 	}
 
-	public void setSubcat_id(String subcat_id) {
+	public void setSubcat_id(Integer subcat_id) {
 		this.subcat_id = subcat_id;
 	}
 
-	public String getSup_id() {
+	public Integer getSup_id() {
 		return sup_id;
 	}
 
-	public void setSup_id(String sup_id) {
+	public void setSup_id(Integer sup_id) {
 		this.sup_id = sup_id;
 	}
     

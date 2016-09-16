@@ -76,10 +76,10 @@ public class ProductController {
 				return "redirect:/productlist";
    }
 			@RequestMapping("product/remove/{id}")
-		    public String deleteProduct(@PathVariable("id") String id,ModelMap model) throws Exception{
+		    public String deleteSub_Category(@PathVariable("id") Integer id,ModelMap model) throws Exception{
 				
 		       try {
-		    	   productService.delete(id);
+				productService.delete(id);
 				model.addAttribute("message","Successfully Added");
 			} catch (Exception e) {
 				model.addAttribute("message",e.getMessage());
@@ -88,9 +88,8 @@ public class ProductController {
 		       
 		        return "redirect:/productlist";
 		    }
-		 
 		    @RequestMapping("product/edit/{id}")
-		    public String editProduct(@PathVariable("id") String id, Model model){
+		    public String editProduct(@PathVariable("id") Integer id, Model model){
 		    	System.out.println("editProduct");
 		        model.addAttribute("product", this.productService.get(id));
 		        model.addAttribute("productList", this.productService.list());
@@ -102,7 +101,7 @@ public class ProductController {
 		    
 		    
 		    @RequestMapping("/productview{id}")
-		    public String view(@PathVariable("id") String id, Model model){
+		    public String view(@PathVariable("id") Integer id, Model model){
 		    	System.out.println("view");
 		    	model.addAttribute("product", this.productService.get(id));
 		    	model.addAttribute("productdetails", this.productService.get(id));
@@ -116,6 +115,12 @@ public class ProductController {
 
 		    	
 		    }
-
+		    @RequestMapping("/productdisplay{id}")
+		    public String productdisplay(@PathVariable("id") String id, Model model){
+		    	System.out.println("productdisplay");
+		    	
+		    	model.addAttribute("productdisplay", this.productService.list());
+		    	return "productdisplay";
+		    }
 
 }

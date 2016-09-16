@@ -5,6 +5,8 @@ import java.util.Set;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
@@ -15,7 +17,8 @@ import javax.persistence.OneToMany;
 
 public class Category {
 	@Id
-	private String id;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer id;
 	
 	private String name;
 	
@@ -24,10 +27,10 @@ public class Category {
 	@OneToMany(mappedBy ="category",fetch =FetchType.EAGER)
 	private  Set<Sub_Category> sub_category;
 	
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId( Integer id) {
 		this.id = id;
 	}
 	public String getName() {

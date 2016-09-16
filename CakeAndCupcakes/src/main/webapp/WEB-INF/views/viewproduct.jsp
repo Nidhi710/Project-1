@@ -26,6 +26,7 @@
 <script>
 	var myProduct = angular.module('myProduct', []);
 	myProduct.controller('viewProduct', function($scope, $http, $location) {
+		$scope.searchKeyword=location.search.substr(8);
 		$scope.product = ${productdetails};
 		
 	});
@@ -52,11 +53,15 @@ h3 {
 			<div class="col-lg-6">
 				<img  src="{{product.img}}" />
 			</div>
-			 <div class="col-lg-2"> 
+			 <!-- <div class="col-lg-2">  -->
 			
   				<h3><span class="h3 text-uppercase">{{product.name}}</span></h3>
-             	<p><span class="h4 text-info">Quantity: {{product.qty}}</span></p>
-				<p><span class="h4 text-danger">Price: Rs {{product.price}}</span>	</p>
+  				<p><span class="h4 text-info">Description:{{product.desc}}</span></p>
+             	<p><span class="h4 ">Quantity: {{product.qty}}</span></p>
+				<p><span class="h4 ">Price: Rs {{product.price}}</span>	</p>
+				<tr>
+                   <td colspan="2" align="center"><a href="cartItem/add?id={{product.id}}"><input class="btn btn-success" type="submit" value="Add to Cart"/></a></td>
+                </tr>
 				
 </div>
 </div>

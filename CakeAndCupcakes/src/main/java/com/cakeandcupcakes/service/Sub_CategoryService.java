@@ -19,11 +19,11 @@ public class Sub_CategoryService {
 	public void saveOrUpdate(Sub_Category sub_category){
 		sub_categoryDAO.saveOrUpdate(sub_category);
 	}
-	public void delete(String id) {
+	public void delete(Integer id) {
 		sub_categoryDAO.delete(id);
 		
 	}
-	public Sub_Category get(String id){
+	public Sub_Category get(Integer id){
 		return sub_categoryDAO.get(id);
 	}
 	public Sub_Category getByName(String name){

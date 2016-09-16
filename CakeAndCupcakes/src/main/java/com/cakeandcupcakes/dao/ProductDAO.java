@@ -6,10 +6,10 @@ import com.cakeandcupcakes.model.Product;
 
 public interface ProductDAO {
 	public void saveOrUpdate(Product product);
-	public void delete (String id);
-	public Product get(String id);
-	public Product getView(String id);
-	public Product getSubcat_id(String id);
+	public void delete (Integer id);
+	public Product get(Integer id);
+	public Product getView(Integer id);
+	public Product getSubcat_id(Integer id);
     public Product getByName(String name);
 	public List<Product> list();
 

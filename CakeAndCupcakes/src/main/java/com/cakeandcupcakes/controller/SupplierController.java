@@ -1,12 +1,12 @@
 package com.cakeandcupcakes.controller;
 
-import javax.validation.Valid;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
+
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,21 +38,21 @@ public class SupplierController {
 	
 	
 	@RequestMapping(value= "/supplier/add")
-	public String addSupplier(@Valid@ModelAttribute("supplier") Supplier supplier, BindingResult result){
-		if (result.hasErrors())
+	public String addSupplier(@ModelAttribute("supplier") Supplier supplier){
+		/*if (result.hasErrors())
 		{
 			return "supplier";
 		}
 		else
 		{
-	
+	*/
 			supplierService.saveOrUpdate(supplier);
 		
 		return "redirect:/suppliers";
 		}
-	}
+	
 	@RequestMapping("supplier/remove/{id}")
-    public String deleteSupplier(@PathVariable("id") String id,ModelMap model) throws Exception{
+    public String deleteSupplier(@PathVariable("id") Integer id,ModelMap model) throws Exception{
 		
        try {
 		supplierService.delete(id);
@@ -66,7 +66,7 @@ public class SupplierController {
     }
  
     @RequestMapping("supplier/edit/{id}")
-    public String editSupplier(@PathVariable("id") String id, Model model){
+    public String editSupplier(@PathVariable("id") Integer id, Model model){
     	System.out.println("editSupplier");
         model.addAttribute("supplier", this.supplierService.get(id));
         model.addAttribute("listSuppliers", this.supplierService.list());

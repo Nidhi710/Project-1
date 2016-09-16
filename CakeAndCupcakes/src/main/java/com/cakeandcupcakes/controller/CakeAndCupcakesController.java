@@ -26,20 +26,7 @@ public class CakeAndCupcakesController {
 	return "index";
 	}
 	
-	@RequestMapping("/login")
-	public String getlogin(){
-		return "login";
-	}
-	
-	/*@RequestMapping("/parties")
-	public String getparties(){
-		return "parties";
-	}*/
-	/*@RequestMapping("/corporate")
-	public String getcorporate(){
-		return "corporate";
-	}*/
 	
 	
-	
+		
 }

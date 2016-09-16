@@ -21,11 +21,11 @@ public class SupplierService {
 			supplierDAO.saveOrUpdate(supplier);
 		}
 			
-		public void delete(String id) {
+		public void delete(Integer id) {
 			supplierDAO.delete(id);
 			
 		}
-		public Supplier get(String id){
+		public Supplier get(Integer id){
 			return supplierDAO.get(id);
 		}
 		public Supplier getByName(String name){

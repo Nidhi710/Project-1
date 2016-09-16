@@ -34,7 +34,7 @@ public class ProductDAOImpl implements ProductDAO {
 	public void saveOrUpdate(Product product) {
 		sessionFactory.getCurrentSession().saveOrUpdate(product);
 	}
-	public void delete(String id) {
+	public void delete(Integer id) {
 		Product ProductToDelete = new Product();
 		ProductToDelete.setId(id);
 		sessionFactory.getCurrentSession().delete(ProductToDelete);
@@ -42,7 +42,7 @@ public class ProductDAOImpl implements ProductDAO {
 
 
 	
-	public Product get(String id) {
+	public Product get(Integer id) {
 		
 		String hql = "from Product where id=" + "'"+ id +"'";
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
@@ -57,7 +57,7 @@ public class ProductDAOImpl implements ProductDAO {
 		return null;
 	}
 	
-        public Product getView(String id) {
+        public Product getView(Integer id) {
 		
 		String hql = "from Product where id=" + "'"+ id +"'";
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
@@ -72,7 +72,7 @@ public class ProductDAOImpl implements ProductDAO {
 		return null;
 	}
 	
-        public Product getSubcat_id(String id) {
+        public Product getSubcat_id(Integer id) {
     		
     		String hql = "from Product where id=" + "'"+ id +"'";
     		Query query = sessionFactory.getCurrentSession().createQuery(hql);

@@ -19,11 +19,11 @@ public class CategoryService {
 	public void saveOrUpdate(Category category){
 		categoryDAO.saveOrUpdate(category);
 	}
-	public void delete(String id) {
+	public void delete(Integer id) {
 		categoryDAO.delete(id);
 		
 	}
-	public Category get(String id){
+	public Category get(Integer id){
 		return categoryDAO.get(id);
 	}
 	public Category getByName(String name){

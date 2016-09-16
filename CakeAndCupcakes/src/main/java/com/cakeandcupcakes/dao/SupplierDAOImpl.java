@@ -36,7 +36,7 @@ public class SupplierDAOImpl implements SupplierDAO {
 		sessionFactory.getCurrentSession().saveOrUpdate(supplier);
 	}
 
-	public void delete(String id) {
+	public void delete(Integer id) {
 		Supplier SupplierToDelete = new Supplier();
 		SupplierToDelete.setId(id);
 		sessionFactory.getCurrentSession().delete(SupplierToDelete);
@@ -44,7 +44,7 @@ public class SupplierDAOImpl implements SupplierDAO {
 
 
 	
-	public Supplier get(String id) {
+	public Supplier get(Integer id) {
 		
 		String hql = "from Supplier where id=" + "'"+ id +"'";
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);

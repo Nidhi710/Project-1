@@ -41,7 +41,7 @@
 			
 			
 			
-			<div id="custom-search-input">
+			<!-- <div id="custom-search-input">
                             <div class="input-group col-sm-4">
                                 <input type="text"ng-model="searchKeyword" placeholder="Search" />
                                 <span class="input-group-btn">
@@ -50,7 +50,7 @@
                                     </button>
                                 </span>
                             </div>
-                        </div>
+                        </div> -->
 
 			<table>
 			
@@ -70,11 +70,11 @@
 				</tr>
 				
 			
-				<tr>
+				<%-- <tr>
 				<div class="form-group">
 				<td><form:label class="control-label col-sm-12" path="id">
 				<spring:message text="Product Id" />
-				</form:label></td>
+				</form:label></td> 
                 
 				<div class="col-sm-12">
 					<c:choose>
@@ -91,7 +91,7 @@
 							</c:choose>
 						</div>
 					</div>
-				</tr>
+				</tr> --%>
 				<tr>
 					<div class="form-group">
 						<form:input path="id" hidden="true" />
@@ -135,11 +135,12 @@
 				
 				<tr >
 					<td colspan="2"><c:if test="${!empty product.name}">
-							<input class="btn btn-primary" type="submit" value="<spring:message text="Edit Sub_Category"/>" />
-						</c:if> <c:if test="${empty product.name}">
-							<input class="btn btn-success" type="submit"
-								value="<spring:message text="Add Product"/>" />
-						</c:if></td>
+							<input class="btn btn-danger" type="submit" value="<spring:message text="Edit Sub_Category"/>" />
+						</c:if> <br>
+						<center><c:if test="${empty product.name}">
+							<input class="btn btn-primary" type="submit"
+								value="<spring:message text="Add "/>" />
+						</c:if></center></td>
 				</tr>
 			</table>
 			</form:form>

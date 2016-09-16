@@ -43,8 +43,8 @@ position: absolute;
         <div class="panel-heading"> 
 	<center>
 	
-		<c:url var="addAction" value="/user/add"></c:url>
-        <form:form class="form-horizontal" role="form" action="user/add" commandName="user">
+		
+        <form:form class="form-horizontal" role="form"  commandName="user">
             <!-- <table> -->
                 <tr>
                     <td colspan="2" align="center"><h2>Register</h2></td>
@@ -95,7 +95,7 @@ position: absolute;
                     <td><form:password class="form-control"  placeholder="Password"   path="password" /></td><br>
                 </tr> <br>
                 <tr>
-                   <td colspan="2" align="center"><input class="btn btn-success" type="submit" value="Register"/></td>
+                   <td colspan="2" align="center"><input  name="_eventId_submit" class="btn btn-success" type="submit" value="Register"/></td>
                 </tr>
            
         </form:form>

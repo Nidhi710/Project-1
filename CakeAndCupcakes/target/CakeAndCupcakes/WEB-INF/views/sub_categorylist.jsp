@@ -39,16 +39,24 @@
   <body ng-app="myApp" ng-controller="getData">  
 <!-- <div class="jumbotron"> -->
 <div class="container" >
-	<h2>
-		<center>Add Sub Category</center>
-		
-	</h2>
+	
 	<center>
 		
 
 			
 			
 			
+
+
+
+
+
+
+<!-- </div> -->
+ <h2>
+ <center></>Sub Category List</center></h2>
+ <br>
+ 
 			<div id="custom-search-input">
                             <div class="input-group col-sm-4">
                                 <input type="text"ng-model="searchKeyword" placeholder="Search" />
@@ -58,22 +66,20 @@
                                     </button>
                                 </span>
                             </div>
-                        </div>
-
-
-
-
-
-
-<!-- </div> -->
- <h3>Sub Category List</h3>
- <br>
- 
-<div class="container" style="background-color: lightgrey;">
+                        </div><br>
+<div class="container" >
 	<c:if test="${!empty sub_categoryList}">
-		<div class="table-responsive" style="border-left: 6px solid red;">
+		<div class="row">
+        <div class="panel panel-primary filterable">
+            <div class="panel-heading">
+                <h3 class="panel-title">Sub Category List</h3>
+                <div class="pull-right">
+                    
+                </div>
+            </div>
 
 			<table class="table table-hover">
+			  <thead>
 				<tr>
 				     <th width="80">Sub_Category ID</th>
 					<th width="80">Category ID</th>
@@ -82,6 +88,8 @@
 					<th width="60">Edit</th>
 					<th width="60">Delete</th>
 				</tr>
+			</thead>
+                <tbody>
 			
 					 <tr  ng-repeat="group in sub_categorydata | filter:searchKeyword">
 					    <td>{{group.id}}</td>

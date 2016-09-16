@@ -38,18 +38,18 @@ position: absolute;
 			    	<h4 class="panel-title"><strong>Sign in</strong></h4>
 			 	</div>
 			  	      <div class="panel-body"> 
-			    	<form accept-charset="UTF-8" role="form">
+			    	<form accept-charset="UTF-8" role="form" action="perform_login" method="POST" >
                     <fieldset>
 			    	  	<div class="form-group">
-			    		    <input class="form-control" placeholder="E-mail" name="email" type="text">
+			    		    <input class="form-control" placeholder="Username" name="username" type="text">
 			    		</div>
 			    		<div class="form-group">
 			    			<input class="form-control" placeholder="Password" name="password" type="password" value="">
 			    		</div>
 			    		<div class="checkbox">
-			    	    	<label>
+			    	    	<!-- <label>
 			    	    		<input name="remember" type="checkbox" value="Remember Me"> Remember Me
-			    	    	</label>
+			    	    	</label> -->
 			    	    </div>
 			    		<input class="btn btn-lg btn-success btn-block" type="submit" value="Login">
 			    	</fieldset>

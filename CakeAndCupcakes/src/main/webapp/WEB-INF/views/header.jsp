@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ page isELIgnored="false"%>
 <%-- <%@ include file="/WEB-INF/views/header.jsp" %> --%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -19,35 +20,36 @@
  
     /* Remove the navbar's default margin-bottom and rounded borders */
     .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
+      /* background-color: #f7b7f3;
+  border-color: #ad4497; */
     }
-  
+    
    }
   </style>
 </head>
 
 <body>
+
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Cupcake Caffe</a>
     </div>
+    <sec:authorize access="hasRole('ROLE_ADMIN')">
     <ul class="nav navbar-nav">
       <li class="active"><a href="/CakeAndCupcakes/">Home</a></li>
-      
+       
        <li><a href="categories">Category</a></li>
       <li><a href="suppliers">Supplier</a></li>
       <li><a href="sub_categories">Sub_Category</a></li>
       <li><a href="products">Product</a></li>
+     
     </ul>
-    <!-- <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    </ul> -->
+    </sec:authorize>
   </div>
 </nav>
-  
+ 
+
 
 </body>
 </html>

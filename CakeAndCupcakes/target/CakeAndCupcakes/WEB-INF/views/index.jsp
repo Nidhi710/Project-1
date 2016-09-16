@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ page isELIgnored="false"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -30,6 +31,12 @@ position: absolute;
      
      
 }
+ .navbar:hover:{
+      background-color: white;
+  border-color: #ad4497;
+  border-radius: 0;
+  hover-color:#ad4497;
+    } *
  h3 {
     color: #c81474;
     font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
@@ -51,6 +58,11 @@ position: absolute;
      font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
 	 font-size: 30px;
  }
+ h5  {
+     color: grey;
+     font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
+	 font-size: 20px;
+ }
  p {
     font-family: Arial;
 	font-size: 14px;
@@ -60,16 +72,21 @@ position: absolute;
 	line-height: 20px;
 	
 }
+hr{
+color:#c2298f
+
+}
  div {
     
     text-align: justify;
 }
  
     /* Remove the navbar's default margin-bottom and rounded borders */
-    .navbar {
+    /* .navbar {
+    background-color:#c2298f
       margin-bottom: 0;
       border-radius: 0;
-    }
+    } */
   li{
     font-family: Arial;
 	font-size: 14px;
@@ -113,89 +130,81 @@ position: absolute;
 </head>
 <body>
 
+
  <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Cupcake Caffe</a>
+    	<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+   
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
+    <div class="collapse navbar-collapse js-navbar-collapse">
+		<ul class="nav navbar-nav">
          <c:forEach items="${categoryList}" var="category">
-       
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">${category.name}<span class="caret"></span></a>
-        <ul class="dropdown-menu">
+       <li class="dropdown mega-dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">${category.name}<span class="caret"></span></a>
+        <ul class="dropdown-menu mega-dropdown-menu">
+        <li class="col-sm-3">
+						
               <c:forEach items="${category.sub_category}" var="sub_category">
             <li><a href="productlist?search=${sub_category.id}">${sub_category.name}</a></li>          
             </c:forEach>
           </ul>
           
           </c:forEach>
+          
           </ul>
-           <!--  <li class="active"><a href="#">Home</a></li>
-          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Ocassion<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Just Married</a></li>
-          <li><a href="just engaged">Just Engaged</a></li>
-          <li><a href="#">Happy Birthday</a></li>
-          <li><a href="#">Thank You</a></li>
-          </ul>
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Flavour<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Best Sellers</a></li>
-          <li><a href="#">Vanilla Collection</a></li>
-          <li><a href="#">Chocolate Collection</a></li>
-        <li><a href="#">Special Flavours</a></li>             
-        <li><a href="#">Softy Centres</a></li>
-        <li><a href="#">Fruity</a></li>
-        <li><a href="#">Chocolate Orange</a></li>
-        <li><a href="#">Red Velvet</a></li>
-        <li><a href="#">Raspberry</a></li>
-        <li><a href="#">Strawberry</a></li>
-        </ul>
-      </li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="corporate">Corporate<span class="caret"></span></a></li>
-        <ul class="dropdown-menu">
-        <li><a href="#">Corporate Events</a></li>
-       </ul>
-       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Events<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-        <li><a href="#">Classes</a></li>
-        <li><a href="#">Parties</a></li>
-       </ul> -->
-        <!-- <li><a href="#">Delivery</a></li>
-        <li><a href="#">Blog</a></li>
-      </ul>  -->
+           
+     
+     
       <ul class="nav navbar-nav navbar-right">
+        <c:if test="${pageContext.request.userPrincipal.name!= null}">
+		<h5>
+			  ${pageContext.request.userPrincipal.name}
+		</h5>
+</c:if>
+         
+         <sec:authorize access="isAnonymous()">
         <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         <li><a href="users"><span class="glyphicon glyphicon-sign-up"></span> Sign Up</a></li>
+        </sec:authorize>
+        <sec:authorize access="isAuthenticated()">
+         <li><a href="<c:url value="/logout" />">Logout</a></li>
+         </sec:authorize>
       </ul>
-    </div>
-  </div>
+     
+    </div> 
 </nav>
+
+  <sec:authorize access="hasRole('ROLE_ADMIN')">
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#"></a>
     </div>
+   
     <ul class="nav navbar-nav">
       <li class="active">
       <li><a href="#"></a></li>
       <li><a href="#"></a></li>
       <li><a href="#"></a></li>
       <li><a href="#"></a></li>
+     
       <li><a href="categories">Category</a></li>
       <li><a href="suppliers">Supplier</a></li>
       <li><a href="sub_categories">Sub Category</a></li>
       <li><a href="products">Product</a></li>
+     
     </ul>
+   
     </div>
 </nav>
-<br>
+ </sec:authorize> 
+
+
 <div class="container">
 <div class="row">
   <div class="col-sm-8">
@@ -269,9 +278,6 @@ position: absolute;
 </div>
 </div>
 <hr>
-
-
-
 
   
 <div class="container text-center">

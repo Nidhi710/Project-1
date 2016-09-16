@@ -1,14 +1,22 @@
 package com.cakeandcupcakes.model;
 
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 
-public class User {
+public class User implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6193959856728322028L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer userId;
@@ -25,8 +33,25 @@ public class User {
 	private String city;
 	private String state;
 	private String country;
+	private Integer cartid;
+	@OneToOne
+	@JoinColumn(name="cartid",insertable=false,updatable=false,nullable=false)
+	Cart cart;
 	
 	
+	
+	public Integer getCartid() {
+		return cartid;
+	}
+	public void setCartid(Integer cartid) {
+		this.cartid = cartid;
+	}
+	public Cart getCart() {
+		return cart;
+	}
+	public void setCart(Cart cart) {
+		this.cart = cart;
+	}
 	public Integer getUserId() {
 		return userId;
 	}

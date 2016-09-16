@@ -39,27 +39,14 @@
   <body ng-app="myApp" ng-controller="getData">  
 <!-- <div class="jumbotron"> -->
 <div class="container" >
-	<h2>
-		<center>Add Product</center>
-		
-	</h2>
+	
 	<center>
 		
 
 			
 			
 			
-			<div id="custom-search-input">
-                            <div class="input-group col-sm-4">
-                                <input type="text"ng-model="searchKeyword" placeholder="Search" />
-                                <span class="input-group-btn">
-                                    <button class="btn btn-danger" type="button">
-                                        <span class=" glyphicon glyphicon-search"></span>
-                                    </button>
-                                </span>
-                            </div>
-                        </div>
-
+			
 
 
 
@@ -69,11 +56,30 @@
  <h3>Product List</h3>
  <br>
  
-<div class="container" style="background-color: lightgrey;">
+<div class="container" >
 	<c:if test="${!empty productList}">
-		<div class="table-responsive" style="border-left: 6px solid red;">
+	<div id="custom-search-input">
+                            <div class="input-group col-sm-4">
+                                <input type="text"ng-model="searchKeyword" placeholder="Search" />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-danger" type="button">
+                                        <span class=" glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+	<br>
+		<div class="row">
+        <div class="panel panel-primary filterable">
+            <div class="panel-heading">
+                <h3 class="panel-title">Product List</h3>
+                <div class="pull-right">
+                    
+                </div>
+            </div>
 
 			<table class="table table-hover">
+			  <thead>
 				<tr>
 				     <!-- <th width="80">Product ID</th>
 					<th width="80">Sub_Category ID</th>
@@ -87,7 +93,7 @@
 					<th width="60">Edit</th>
 					<th width="60">Delete</th>
 				</tr>
-			
+			</thead>
 					 <tr  ng-repeat="group in productdata | filter:searchKeyword">
 					    <!-- <td>{{group.id}}</td>
 					    <td>{{group.subcat_id}}</td>

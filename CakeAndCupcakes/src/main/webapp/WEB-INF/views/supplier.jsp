@@ -45,18 +45,9 @@
 
 		<form:form class="form-horizontal" role="form" action="${addAction}"
 			commandName="supplier">
-<div id="custom-search-input">
-                            <div class="input-group col-md-3">
-                                <input type="text" ng-model="searchKeyword" />
-                                <span class="input-group-btn">
-                                    <button class="btn btn-danger" type="button">
-                                        <span class=" glyphicon glyphicon-search"></span>
-                                    </button>
-                                </span>
-                            </div>
-                        </div>
+
 			<table>
-				<tr>
+				<%-- <tr>
 					<div class="form-group">
 						<td><form:label class="control-label col-sm-2" path="id">
 								<spring:message text="ID" />
@@ -76,7 +67,7 @@
 							</c:choose>
 						</div>
 					</div>
-				</tr>
+				</tr> --%> 
 				<tr>
 					<div class="form-group">
 						<form:input path="id" hidden="true" />
@@ -98,12 +89,14 @@
 				</tr>
 				<tr>
 					<td colspan="2"><c:if test="${!empty supplier.name}">
-							<input class="btn btn-primary" type="submit"
+							<input class="btn btn-danger" type="submit"
 								value="<spring:message text="Edit Supplier"/>" />
-						</c:if> <c:if test="${empty supplier.name}">
-							<input class="btn btn-success" type="submit"
-								value="<spring:message text="Add Supplier"/>" />
-						</c:if></td>
+						</c:if> <br>
+						<center><c:if test="${empty supplier.name}">
+							<input class="btn btn-primary" type="submit"
+								value="<spring:message text="Add "/>" />
+						</c:if>
+						</center></td>
 				</tr>
 			</table>
 </div>
@@ -112,12 +105,30 @@
 </div>
 <!-- </div> -->
 <br>
-<div class="container" style="background-color: lightgrey;">
-	<h3>Supplier List</h3>
+<div class="container" >
+	
 	<c:if test="${!empty supplierList}">
-		<div class="table-responsive" style="border-left: 6px solid red;">
-         
-			<table class="table table-hover">
+	<div id="custom-search-input">
+                            <div class="input-group col-md-3">
+                                <input type="text" placeholder="Search" ng-model="searchKeyword" />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-danger" type="button">
+                                        <span class=" glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>
+                            </div>
+                        </div><br>
+		<div class="row">
+        <div class="panel panel-primary filterable">
+            <div class="panel-heading">
+                <h3 class="panel-title">Supplier List</h3>
+                <div class="pull-right">
+                    
+                </div>
+            </div>
+            <table class="table table-hover">
+                <thead>
+                    
 				<tr>
 					<th width="80">Supplier ID</th>
 					<th width="120">Supplier Name</th>
@@ -125,6 +136,8 @@
 					<th width="60">Edit</th>
 					<th width="60">Delete</th>
 				</tr>
+                </thead>
+                <tbody>
 				
 					<tr ng-repeat="group in supplierdata | filter:searchKeyword">
 						<td>{{group.id}}</td>

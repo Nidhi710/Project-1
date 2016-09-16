@@ -55,7 +55,7 @@ public class Sub_CategoryController {
 				
    }
 			@RequestMapping("sub_category/remove/{id}")
-		    public String deleteSub_Category(@PathVariable("id") String id,ModelMap model) throws Exception{
+		    public String deleteSub_Category(@PathVariable("id") Integer id,ModelMap model) throws Exception{
 				
 		       try {
 				sub_categoryService.delete(id);
@@ -69,7 +69,7 @@ public class Sub_CategoryController {
 		    }
 		 
 		    @RequestMapping("sub_category/edit/{id}")
-		    public String editSub_Category(@PathVariable("id") String id, Model model){
+		    public String editSub_Category(@PathVariable("id") Integer id, Model model){
 		    	System.out.println("editSub_Category");
 		        model.addAttribute("sub_category", this.sub_categoryService.get(id));
 		        model.addAttribute("sub_categoryList", this.sub_categoryService.list());

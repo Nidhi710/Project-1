@@ -19,17 +19,17 @@ public class ProductService {
 	public void saveOrUpdate(Product product){
 		productDAO.saveOrUpdate(product);
 	}
-	public void delete(String id) {
+	public void delete(Integer id) {
 		productDAO.delete(id);
 		
 	}
-	public Product get(String id){
+	public Product get(Integer id){
 		return productDAO.get(id);
 	}
-	public Product getView(String id){
+	public Product getView(Integer id){
 		return productDAO.getView(id);
 	}
-	public Product getSubcat_id(String id){
+	public Product getSubcat_id(Integer id){
 		return productDAO.getSubcat_id(id);
 	}
 	public Product getByName(String name){

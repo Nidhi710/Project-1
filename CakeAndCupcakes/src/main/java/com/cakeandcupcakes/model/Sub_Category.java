@@ -2,6 +2,8 @@ package com.cakeandcupcakes.model;
 
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -12,8 +14,9 @@ import javax.persistence.ManyToOne;
 
 public class Sub_Category {
 	@Id
-	private String id;
-	private String cat_id;	
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer id;
+	private Integer cat_id;	
 	private String name;
 	private String desc;
 	@ElementCollection
@@ -21,19 +24,19 @@ public class Sub_Category {
 	@JoinColumn(name="cat_id",insertable=false,updatable=false,nullable=false)
 	Category category;
 
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public String getCat_id() {
+	public Integer getCat_id() {
 		return cat_id;
 	}
 
-	public void setCat_id(String cat_id) {
+	public void setCat_id(Integer cat_id) {
 		this.cat_id = cat_id;
 	}
 

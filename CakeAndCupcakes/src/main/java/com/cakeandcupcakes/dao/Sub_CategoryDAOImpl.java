@@ -36,7 +36,7 @@ public class Sub_CategoryDAOImpl implements Sub_CategoryDAO {
 	public void saveOrUpdate(Sub_Category sub_category) {
 		sessionFactory.getCurrentSession().saveOrUpdate(sub_category);
 	}
-	public void delete(String id) {
+	public void delete(Integer id) {
 		Sub_Category Sub_CategoryToDelete = new Sub_Category();
 		Sub_CategoryToDelete.setId(id);
 		sessionFactory.getCurrentSession().delete(Sub_CategoryToDelete);
@@ -44,7 +44,7 @@ public class Sub_CategoryDAOImpl implements Sub_CategoryDAO {
 
 
 	
-	public Sub_Category get(String id) {
+	public Sub_Category get(Integer id) {
 		
 		String hql = "from Sub_Category where id=" + "'"+ id +"'";
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);

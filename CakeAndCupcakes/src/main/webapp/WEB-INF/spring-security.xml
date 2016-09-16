@@ -33,10 +33,12 @@
 			access="hasRole('ROLE_ADMIN')" />			
 				
 		<security:intercept-url pattern="/" access="permitAll" />
-		<security:form-login login-page="/loginpage"
+		<security:form-login login-page="/login"
 			default-target-url="/" login-processing-url="/perform_login"
 			authentication-failure-url="/login?error" username-parameter="username"
 			password-parameter="password" />
 		<security:logout logout-success-url="/perform_logout" />
 	</security:http>
+	
+	
 </beans>

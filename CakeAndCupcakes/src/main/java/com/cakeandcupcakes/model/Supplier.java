@@ -1,8 +1,10 @@
 package com.cakeandcupcakes.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import org.hibernate.validator.constraints.NotEmpty;
+
 
 
 
@@ -10,15 +12,16 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 public class Supplier {
 	@Id
-	private String id;
-	private String name;@NotEmpty(message= "Enter Supplier Name") 
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer id;
+	private String name;/*@NotEmpty(message= "Enter Supplier Name") */
 			
-	private String address;@NotEmpty(message= "Enter Supplier Address")
+	private String address;/*@NotEmpty(message= "Enter Supplier Address")*/
 	
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getName() {
