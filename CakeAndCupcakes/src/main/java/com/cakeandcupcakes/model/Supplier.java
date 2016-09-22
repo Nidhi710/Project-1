@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 
 
 
@@ -14,9 +16,10 @@ public class Supplier {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	private String name;/*@NotEmpty(message= "Enter Supplier Name") */
-			
-	private String address;/*@NotEmpty(message= "Enter Supplier Address")*/
+	@NotEmpty(message= "Enter Supplier Name") 
+	private String name;
+	@NotEmpty(message= "Enter Supplier Address")		
+	private String address;
 	
 	public Integer getId() {
 		return id;

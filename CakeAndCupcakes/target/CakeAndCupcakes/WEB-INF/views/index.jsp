@@ -16,29 +16,15 @@
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
  <style>
- body 
  
-  {
-position: absolute;
-	top: 0px;
-	left: 0px;
-	right: 0px;
-	bottom: 0px;
-	width: auto;
-	height: auto;
-	background-image:  url("resources/images/download.jpg");
-	background-size: cover;
-     
-     
+.navbar-inverse{
+/* background-color:#ffe6ea;
+      margin-bottom: 0;
+      border-radius: 0;
+      color: #c81474; */
 }
- .navbar:hover:{
-      background-color: white;
-  border-color: #ad4497;
-  border-radius: 0;
-  hover-color:#ad4497;
-    } *
  h3 {
-    color: #c81474;
+    color: #FF9900;
     font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
 	font-size: 47px;
 	font-style: italic;
@@ -46,60 +32,20 @@ position: absolute;
 	font-weight: 100;
 	line-height: 53.2px;
 }
-  h4{
-  color: #c81474;
-    font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
-	font-size: 20px;
-	font-style: italic;
-  
-  }
- h2  {
-     color: #ee87c8;
-     font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
-	 font-size: 30px;
- }
- h5  {
-     color: grey;
-     font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
-	 font-size: 20px;
- }
- p {
-    font-family: Arial;
+p{
+ color: #B2801A;
+ font-family: Arial;
 	font-size: 14px;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 400;
 	line-height: 20px;
-	
-}
-hr{
-color:#c2298f
-
-}
+ }
  div {
     
     text-align: justify;
 }
- 
-    /* Remove the navbar's default margin-bottom and rounded borders */
-    /* .navbar {
-    background-color:#c2298f
-      margin-bottom: 0;
-      border-radius: 0;
-    } */
-  li{
-    font-family: Arial;
-	font-size: 14px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 400;
-	line-height: 20px;
-    
-  }
-  
-  
-    /* Add a gray background color and some padding to the footer */
-    footer {
+footer {
       background-color: #f2f2f2;
       padding: 25px;
       ul {list-style-type: square;}
@@ -162,24 +108,25 @@ color:#c2298f
      
       <ul class="nav navbar-nav navbar-right">
         <c:if test="${pageContext.request.userPrincipal.name!= null}">
-		<h5>
-			  ${pageContext.request.userPrincipal.name}
-		</h5>
+		<h4>
+			 Welcome ${pageContext.request.userPrincipal.name}
+		</h4>
 </c:if>
          
          <sec:authorize access="isAnonymous()">
-        <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="login"><span class="glyphicon glyphicon-login"  data-toggle="collapse"  aria-expanded="false" aria-controls="nav-collapse2"></span> Login</a></li>
         <li><a href="users"><span class="glyphicon glyphicon-sign-up"></span> Sign Up</a></li>
         </sec:authorize>
         <sec:authorize access="isAuthenticated()">
          <li><a href="<c:url value="/logout" />">Logout</a></li>
          </sec:authorize>
       </ul>
-     
+     <!-- <ul class="nav pull-right scroll-top">
+  <li><a href="#" title="Scroll to top"><i class="glyphicon glyphicon-chevron-up"></i></a></li>
+</ul> -->
     </div> 
 </nav>
-
-  <sec:authorize access="hasRole('ROLE_ADMIN')">
+ <sec:authorize access="hasRole('ROLE_ADMIN')">
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -203,115 +150,165 @@ color:#c2298f
     </div>
 </nav>
  </sec:authorize> 
-
-
+<br>
 <div class="container">
-<div class="row">
-  <div class="col-sm-8">
+    <!-- Indicators -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-      </ol>
-
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner" role="listbox">
-        <div class="item active">
-          <img src="resources/images/71.jpg" alt="Image">
-          <div class="carousel-caption">
-            <!-- <h3 class="italic">CUPCAKES DELIVERED NEXT DAY</h3> -->
-           
-          </div>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="resources/images/Cupcakes-blog-1176x356 (1).jpg" alt="Chania">
+                
+            </div>
+            <div class="item">
+                <img src="resources/images/Blog-2.jpg" alt="Chania">
+                
+            </div>
+            <div class="item">
+                <img src="resources/images/parties-2.jpg" alt="Flower">
+                
+            </div>
+            <div class="item">
+                <img src="resources/images/IMG_9973---1280x387 (1).jpg" alt="Flower">
+                
+            </div>
         </div>
-
-        <div class="item">
-          <img src="resources/images/2.jpg" class="img-responsive" alt="Image">
-          <div class="carousel-caption">
-           <!--  <h3>TONS OF FLAVOUR </h3> -->
-            
-          </div>
-        </div>
-        
-         <div class="item">
-          <img src="resources/images/maxresdefault1.jpg" class="img-responsive" alt="Image">
-          <div class="carousel-caption">
-            <!-- <h3>TONS OF FLAVOUR </h3> -->
-            
-          </div>
-        </div>
-         
-      </div>
-
-      <!-- Left and right controls -->
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="fa fa-angle-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="fa fa-angle-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
     </div>
-  </div>
-  
-     <div class="container">
-    <div class="row">
-  <div class="col-sm-4">
-  
-      <h2></h2>
-      
-  <h2><center>Flavour of the Month!</center></h2>
-  
-  <center><img src="resources/images/6045001599_eb0d30553a.jpg" class="img-circle" alt="Cinque Terre" width="304" height="236"></center>
-<center><h4>Blueberry Cupcake</h4></center>
-      
-     <center> <p>Great celebrations this month... Have you ordered your cupcakes ? Every party should have some yummy cakes! .</p>
-      <!-- </div>
-      <div class="well">
-      <div class="col-sm-4"> -->
-       <p>It's that time of year again! Combine with some of our blueberry cupcakes for that lazy summer's day feeling... .</p>
-     </center> </div>
-     
-    </div>
-  </div>
 </div>
-</div>
-<hr>
-
-  
-<div class="container text-center">
-  <h3>Beautiful handmade cupcakes</h3><br>
-  <div class="row">
-    <div class="col-sm-4">
-      <img src="resources/images/5.jpg" class="img-responsive" style="width:100%" alt="Image">
-       <h2>Seasonal</h2>
-      <p>Designed with flair and created with loving attention to details, our seasonal range for all those special times of year is not to be missed!</p>
-    </div>
-    
-    <div class="col-sm-4">
-      <img src="resources/images/Nut1.jpg" class="img-responsive" style="width:100%" alt="Image">
-      <h2>Coporate</h2>
-      <p>We have a leading reputation for promotional products decorated with logos and company colours. Exceptional quality and service is assured with our branded cupcakes. </p>
-      </div>
-      
-    <div class="col-sm-4">
-      <img src="resources/images/6.jpg" class="img-responsive" style="width:100%" alt="Image">
-      <h2>Parties</h2>
-      <p>Make an order with a fabulous selection of cupcakes, freshly roasted almond cupcakes.
-      </div>
-    
-  </div>
-</div><br>
-<div class="container text">
+   
+   <div class="container text">
+    <div class="pull-middle">
   <h3>Welcome</h3><br>
   <p>Gorgeous, handmade and stylishly decorated with a swirl of buttercream frosting and delightful toppings. we lovingly make every single cupcake by hand with the greatest care from the finest fresh and natural ingredients, including free range eggs, fresh milk and real butter - just as you would do at home, only with bigger mixing bowls! The proof is in the eating and our cakes taste as good as they look!</p>
   <p>Our products can be personalised to add your own message in piped icing on top of lashings of tantalising buttercream frosting, and presented in luxury gift boxes with wide ribbons. They make an ideal gift and delicious treat, perfect for weddings, anniversaries, birthdays and celebratory events. Take a look, indulge your senses and try one of our deliciously moreish cupcakes.</p>
   <p>We deliver on the date of your choice subject to availability our integrated delivery calendar displays dates for delivery when you check out, so you can relax and look forward to the arrival of your order. We usually require a minimum of 24 hours after receiving your online order for your order to be delivered.-- see Delivery for more information.</p>
   <p>For corporate clients, we offer clients customised branding and packaging to suit your particular requirements. We can supply large volumes for events as well as promotional campaigns for corporate clients. We have an outstanding reputation for our customer service and the quality of our products.</p>
-  
+ </div>
+ <br>
+ 
+ 
+   <marquee style="  scrollamount="6" scrolldelay="90" direction="left" onmouseover="this.stop()" onmouseout="this.start()">
+<%-- <a href="productlist?search=${sub_category.id}">${sub_category.name}</a> --%>
+<ul class="list-inline list-unstyled r">
 
-<footer class="container-fluid text">
+<li class="productbox">
+    <img src="resources/images/summer-mr-whippy-close-up.jpg" class="img-responsive">
+    <div class="producttitle"> Summer Mr Whippy</div> 
+</li> 
+<li class="productbox">
+    <img src="resources/images/red-velvet-close-up.jpg" class="img-responsive">
+    <div class="producttitle"> Red Velvet</div> 
+</li>
+<li class="productbox">
+    <img src="resources/images/cookies-and-cream-close-up.jpg" class="img-responsive">
+    <div class="producttitle"> Cookies And Cream</div> 
+</li>
+<li class="productbox">
+    <img src="resources/images/blueberry-close-up.jpg" class="img-responsive">
+    <div class="producttitle"> Blueberry</div> 
+</li>
+<li class="productbox">
+    <img src="resources/images/blues-close-up.jpg" class="img-responsive">
+    <div class="producttitle"> Blues</div> 
+</li>
+<li class=" productbox">
+    <img src="resources/images/easter-2016-close-up.jpg" class="img-responsive">
+    <div class="producttitle">Easter</div> 
+</li>
+<li class="productbox">
+    <img src="resources/images/rocky-mountain-close-up.jpg" class="img-responsive">
+    <div class="producttitle"> Rocky Mountain</div> 
+</li>
+<li class="productbox">
+    <img src="resources/images/salted-caramel-close-up.jpg" class="img-responsive">
+    <div class="producttitle"> Salted Caramel</div> 
+</li>
+<li class="productbox">
+    <img src="resources/images/sex-and-the-city-chocolate-close-up.jpg" class="img-responsive">
+    <div class="producttitle"> Sex And The City Chocolate</div> 
+</li>
+<li class="productbox">
+    <img src="resources/images/raspberry-close-up_1 (1).jpg" class="img-responsive">
+    <div class="producttitle"> Raspberry</div> 
+</li>
+<li class="productbox">
+    <img src="resources/images/lemon-close-up.jpg" class="img-responsive">
+    <div class="producttitle">Lemon </div> 
+</li>
+ 
+</ul></a><br>
+</marquee>
+
+<div class="container text-center">    
+<div class="row">
+<div class="col-sm-8">
+     
+      <h2>Coporate</h2>
+      <p>We have a leading reputation for promotional products decorated with logos and company colours. Exceptional quality and service is assured with our branded cupcakes. The yummy and extremely tasty cupcakes. We use only the freshest ingredients and offer a wide, ever growing range of flavours  - you can even create your own cupcake! .</p>
+      </div>
+
+<section id="wrapper">
+	
+		<div class="col-md-4">
+   			<div id="private_label" class="panel panel-default"  class="carousel slide" data-ride="carousel">
+				<div class="alert alert-warning"><h2>Corporate</h2></div>	
+	           
+              <div class="panel-body" style="padding: 0px;">
+				
+						<div class="carousel-inner">
+				
+					
+							<ol class="carousel-indicators">
+								<li data-target="#private_label" data-slide-to="0" class="active"></li>
+								<li data-target="#private_label" data-slide-to="1"></li>
+								<li data-target="#private_label" data-slide-to="2"></li>
+								<!-- <li data-target="#private_label" data-slide-to="3"></li>
+								<li data-target="#private_label" data-slide-to="4"></li>
+								<li data-target="#private_label" data-slide-to="5"></li>
+								<li data-target="#private_label" data-slide-to="6"></li>
+								<li data-target="#private_label" data-slide-to="7"></li> -->
+							</ol>
+					
+						
+
+							<div class="item active">
+								<img src="resources/images/corporate-cupcakes-1.jpg" alt="1 slide">
+							</div>
+							
+							<div class="item">
+								<img src="resources/images/corporate-cupcakes-2.jpg" alt="2 slide">
+							</div>
+							
+							<div class="item">
+								<img src="resources/images/corporate-cupcakes-3.jpg" alt="3 slide">
+							</div>	
+												
+						</div>	
+										
+				     </div>
+				</div>
+			</div>				
+		</div>
+					
+ </section>
+ 
+  </div>
+ <footer class="container-fluid text">
    
     <div class="row">
     <div class="col-sm-4">
@@ -344,6 +341,16 @@ color:#c2298f
     
 </div> 
 </footer> 
+<div id="footer">
+  <div class="container">
+  </div>
+</div>
+
+ <ul class="nav pull-right scroll-top">
+  <li><a href="#" title="Scroll to top"><i class="glyphicon glyphicon-chevron-up"></i></a></li>
+</ul> 
+
+
 </body>
 </html>
 </html>

@@ -22,7 +22,11 @@
  <script type="text/javascript" src="resources/js/angular.min.js"></script>
  --><script src="<u:url value="resources/js/controller.js" />" ></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script> 
- 
+ <style>
+ form:errors {
+    color:red
+ }
+ </style>
 </head>
 <body>
  <!-- <body ng-app="myApp" ng-controller="getData"> --> 
@@ -91,7 +95,7 @@
 								<spring:message text="Sub Category Name" />
 							</form:label></td>
 						<td><form:input class="form-control" path="name" />
-						<form:errors path="name" cssClass="error"  colour="red"/></td>
+						<form:errors path="name" cssClass="error"  /></td>
 					</div>
 				</tr>
 				<tr>

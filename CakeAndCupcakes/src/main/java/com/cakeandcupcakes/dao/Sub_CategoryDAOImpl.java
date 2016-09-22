@@ -64,6 +64,7 @@ public Sub_Category getByName(String name) {
 		
 		String hql = "from Sub_Category where name=" + "'"+ name +"'";
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		/*Query query = sessionFactory.getCurrentSession().createQuery(hql);*/
 		
 		@SuppressWarnings("unchecked")
 		List<Sub_Category> listSub_Category = (List<Sub_Category>) query.list();

@@ -98,37 +98,37 @@
 						<td><form:label class="control-label col-sm-12" path="name">
 								<spring:message text="Product Name" />
 							</form:label></td>
-						<td><form:input class="form-control" path="name"
-								required="true" /></td>
+						<td><form:input class="form-control" path="name"  />
+								<form:errors path="name" cssClass="error"  /></td>
 					</div>
 				</tr>
 				<tr>
 					<td><form:label class="control-label col-sm-12" path="desc">
 							<spring:message text="Product Description" />
 						</form:label></td>
-					<td><form:input class="form-control" path="desc"
-							required="true" /></td>
+					<td><form:input class="form-control" path="desc" />
+							<form:errors path="desc" cssClass="error"  /></td>
 				</tr>
 				<tr>
 					<td><form:label class="control-label col-sm-12" path="qty">
 							<spring:message text="Quantity" />
 						</form:label></td>
-					<td><form:input class="form-control" path="qty"
-							required="true" /></td>
+					<td><form:input class="form-control" path="qty"  />
+							<form:errors path="qty" cssClass="error"  /></td>
 				</tr>
 				<tr>
 					<td><form:label class="control-label col-sm-12" path="price">
 							<spring:message text="Price" />
 						</form:label></td>
-					<td><form:input class="form-control" path="price"
-							required="true" /></td>
+					<td><form:input class="form-control" path="price"  />
+							<form:errors path="price" cssClass="error"  /></td>
 				</tr>
 				 <tr>
 					<td><form:label class="control-label col-sm-12" path="img">
 							<spring:message text="Image" />
 						</form:label></td>
-					<td><form:input class="form-control" type="file" path="img"
-							required="true" /></td>
+					<td><form:input class="form-control" type="file" path="img"  />
+							</td>
 				</tr> 
 				
 					

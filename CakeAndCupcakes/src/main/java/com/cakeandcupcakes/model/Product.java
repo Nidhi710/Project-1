@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
+
+
 import org.springframework.web.multipart.MultipartFile;
 
 
@@ -19,9 +21,13 @@ public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
+	/*@NotEmpty(message="Product Name is compulsory")*/
 	private String name;
+	/*@NotEmpty(message="Product Description is compulsory")*/
 	private String desc;
+	/*@NotEmpty(message="Product Quantity is compulsory")*/
 	private String qty;
+	/*@NotEmpty(message="Product Price is compulsory")*/
 	private int price;
 	private Integer subcat_id;
 	private Integer sup_id;

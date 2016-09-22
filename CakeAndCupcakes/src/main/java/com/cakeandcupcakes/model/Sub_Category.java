@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 
 
 @Entity
@@ -16,8 +18,10 @@ public class Sub_Category {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	private Integer cat_id;	
+	private Integer cat_id;
+	@NotEmpty(message="Sub_Category Name is compulsory")
 	private String name;
+	@NotEmpty(message="Sub_Category Description is compulsory")
 	private String desc;
 	@ElementCollection
 	@ManyToOne
@@ -66,7 +70,7 @@ public class Sub_Category {
 	public String toString()
 	{
 		
-		return "{cat_id :'"+cat_id+"',id : '" + id + "'," + "name : '" + name + "'," + "desc :'" + desc + "'}";
+		return "{id : '" + id + "', "+"cat_id :'" + cat_id + "'," + "name : '" + name + "'," + "desc :'" + desc + "'}";
 	}
 	
 }

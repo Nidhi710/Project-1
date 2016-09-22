@@ -14,18 +14,27 @@
 	<view-state id="start" view="user" model="flowScope.user">
 	   <transition on="submit" to="confirmDetails"/>
 	</view-state>
+	
+	
+		
+	
  
 	<!-- <action-state id="validate">
 		<evaluate expression="demohandler.validateDetails(userBean,messageContext)"></evaluate>
 		<transition on="success" to="confirmDetails" />
 		<transition on="failure" to="start" />
 	</action-state> -->
- 
+    
+    
 	<view-state id="confirmDetails" view="confirmDetails" model="flowScope.user">
 		<transition on="edit" to="start" />
-		<transition on="submit" to="welcome" />
+		<transition on="submit" to="add" />
 	</view-state>
- 
+	
+     <action-state id="add">
+	<evaluate expression="userService.saveOrUpdate(user)" result="flowScope.user"></evaluate>
+	<transition to="welcome" />
+	</action-state>
 	<end-state id="welcome" view="index" />
 	
  

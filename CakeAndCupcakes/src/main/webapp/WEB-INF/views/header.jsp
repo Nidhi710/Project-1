@@ -33,7 +33,7 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Cupcake Caffe</a>
+      <a class="navbar-brand" href="/CakeAndCupcakes/">Cupcake Caffe</a>
     </div>
     <sec:authorize access="hasRole('ROLE_ADMIN')">
     <ul class="nav navbar-nav">
@@ -43,6 +43,17 @@
       <li><a href="suppliers">Supplier</a></li>
       <li><a href="sub_categories">Sub_Category</a></li>
       <li><a href="products">Product</a></li>
+     
+    </ul>
+    </sec:authorize>
+    <sec:authorize access="isAnonymous()">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/CakeAndCupcakes/">Home</a></li>
+       
+       <!-- <li><a href="categories">Category</a></li>
+      <li><a href="suppliers">Supplier</a></li>
+      <li><a href="sub_categories">Sub_Category</a></li>
+      <li><a href="products">Product</a></li> -->
      
     </ul>
     </sec:authorize>

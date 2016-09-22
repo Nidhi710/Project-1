@@ -11,11 +11,11 @@ import com.cakeandcupcakes.service.Sub_CategoryService;
 
 @Controller
 public class CakeAndCupcakesController {
-	@Autowired
+	@Autowired(required=true)
 	private CategoryService categoryService;
-	@Autowired
+	@Autowired(required=true)
 	private ProductService productService;
-	@Autowired
+	@Autowired(required=true)
 	private Sub_CategoryService sub_categoryService;
 	
 	@RequestMapping("/")

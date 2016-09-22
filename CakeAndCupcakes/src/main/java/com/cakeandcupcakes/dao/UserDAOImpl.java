@@ -49,6 +49,8 @@ public List<User> list() {
 		session.saveOrUpdate(user);
 		cart.setUserid(user.getUserId());
 		session.saveOrUpdate(cart);
+		user.setEnabled(true);
+		user.setRole("ROLE_USER");
 		session.flush();
 				
 				

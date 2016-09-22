@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 
 
 
@@ -19,9 +21,9 @@ public class Category {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	
+	@NotEmpty(message="Category Name is compulsory")
 	private String name;
-	
+	@NotEmpty(message="Category Description is compulsory")
 	private String desc;
 	@ElementCollection
 	@OneToMany(mappedBy ="category",fetch =FetchType.EAGER)

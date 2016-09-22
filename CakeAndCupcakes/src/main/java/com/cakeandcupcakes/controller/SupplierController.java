@@ -2,11 +2,13 @@ package com.cakeandcupcakes.controller;
 
 
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,19 +40,19 @@ public class SupplierController {
 	
 	
 	@RequestMapping(value= "/supplier/add")
-	public String addSupplier(@ModelAttribute("supplier") Supplier supplier){
-		/*if (result.hasErrors())
+	public String addSupplier(@Valid@ModelAttribute("supplier") Supplier supplier,BindingResult result){
+		if (result.hasErrors())
 		{
 			return "supplier";
 		}
 		else
 		{
-	*/
+	
 			supplierService.saveOrUpdate(supplier);
 		
 		return "redirect:/suppliers";
 		}
-	
+	}
 	@RequestMapping("supplier/remove/{id}")
     public String deleteSupplier(@PathVariable("id") Integer id,ModelMap model) throws Exception{
 		

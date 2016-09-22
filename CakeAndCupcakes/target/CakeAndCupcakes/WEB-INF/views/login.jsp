@@ -20,7 +20,7 @@ position: absolute;
 	bottom: 0px;
 	width: auto;
 	height: auto;
-	background-image:  url("resources/images/8.jpg");
+	background-image:  url("resources/images/cupcake-pp6.jpg");
 	background-size: cover;
      
      
@@ -30,20 +30,22 @@ position: absolute;
 <body>
 
 
-<div class="container"  style="margin-top:30px" >
+<div class="container"  style="margin-top:1px" >
     <div class="row-md-4 row-md-vertical-offset-40">
         <div class="col-md-4 col-md-offset-4">
     		       <!-- <div class="panel panel-info"> -->
 			  	 <div class="panel-heading"> 
-			    	<h4 class="panel-title"><strong>Sign in</strong></h4>
+			    	<h6 class="panel-title"><strong>Sign in</strong></h6>
 			 	</div>
 			  	      <div class="panel-body"> 
 			    	<form accept-charset="UTF-8" role="form" action="perform_login" method="POST" >
                     <fieldset>
 			    	  	<div class="form-group">
+			    	  	    <label ><span class="glyphicon glyphicon-user"></span></label>
 			    		    <input class="form-control" placeholder="Username" name="username" type="text">
 			    		</div>
 			    		<div class="form-group">
+			    		    <label class=" control-label"><span class="glyphicon glyphicon-lock"></span></label>
 			    			<input class="form-control" placeholder="Password" name="password" type="password" value="">
 			    		</div>
 			    		<div class="checkbox">

@@ -2,10 +2,13 @@ package com.cakeandcupcakes.controller;
 
 
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,17 +38,17 @@ public class CategoryController {
 	}
 	
 	@RequestMapping(value= "/category/add")
-	public  String addCategory(@ModelAttribute("category") Category category){
-		/*if (result.hasErrors())
+	public  String addCategory(@Valid@ModelAttribute("category") Category category, BindingResult result){
+		if (result.hasErrors())
 		{
 			return "category";
 		}
 		else
-		{*/
+		{
 		categoryService.saveOrUpdate(category);
 		
 		return "redirect:/categories";
-		
+		}
 	}
 	@RequestMapping("category/remove/{id}")
     public String deleteCategory(@PathVariable("id")  Integer id,ModelMap model) throws Exception{

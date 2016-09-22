@@ -5,11 +5,13 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -46,6 +48,12 @@ public class ProductController {
 	
 			@RequestMapping(value= "/product/add")
 			public String addProduct(@ModelAttribute("product") Product product ,HttpServletRequest request){
+				/*if(result.hasErrors())
+				{
+					return "product";
+				}
+				else
+				{*/
 				Sub_Category sub_category = sub_categoryService.getByName(product.getSub_category().getName());
 				sub_categoryService.saveOrUpdate(sub_category);
 				
@@ -74,7 +82,8 @@ public class ProductController {
 				}	
 				
 				return "redirect:/productlist";
-   }
+				}
+   
 			@RequestMapping("product/remove/{id}")
 		    public String deleteSub_Category(@PathVariable("id") Integer id,ModelMap model) throws Exception{
 				

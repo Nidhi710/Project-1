@@ -28,5 +28,6 @@ public class Sub_CategoryService {
 	}
 	public Sub_Category getByName(String name){
 		return sub_categoryDAO.getByName(name);
+		/*return sub_categoryDAO.getByName(name);*/
 	}
 }
