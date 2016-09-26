@@ -20,7 +20,7 @@ import com.cakeandcupcakes.model.Cart;
 import com.cakeandcupcakes.model.User;
 @Repository
 public class UserDAOImpl implements UserDAO {
-	@Autowired
+	@Autowired(required=true)
 	 private SessionFactory sessionFactory;
 	
 
@@ -42,12 +42,12 @@ public List<User> list() {
 		Session session = sessionFactory.getCurrentSession();
 		Cart cart= new Cart();
 		
-		cart.setUserid(user.getUserId());
+		cart.setUserId(user.getUserId());
 		session.saveOrUpdate(cart);
 		
 		user.setCartid(cart.getCartid());
 		session.saveOrUpdate(user);
-		cart.setUserid(user.getUserId());
+		cart.setUserId(user.getUserId());
 		session.saveOrUpdate(cart);
 		user.setEnabled(true);
 		user.setRole("ROLE_USER");
@@ -67,11 +67,11 @@ public List<User> list() {
 		return user.get(0);
 
 	}
-	public User getByName(String name){
+	public User getByName(String username){
 
 		Session session=sessionFactory.openSession();
 		Criteria c = session.createCriteria(User.class);
-		c.add(Restrictions.eq("username", name));
+		c.add(Restrictions.eq("username", username));
 		@SuppressWarnings("unchecked")
 		List<User> user = c.list();
 		session.flush();

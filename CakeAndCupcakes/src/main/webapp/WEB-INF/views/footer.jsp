@@ -17,7 +17,7 @@
 <style>
 footer {
       background-color: #f2f2f2;
-      padding: 25px;
+      /* padding: 25px; */
       ul {list-style-type: square;}
       
     }

@@ -1,12 +1,12 @@
 package com.cakeandcupcakes.model;
 
 import java.io.Serializable;
-import java.util.UUID;
-
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
 import org.springframework.stereotype.Component;
+
 @Entity
 @Component
 public class OrderedItems implements Serializable {
@@ -17,6 +17,7 @@ public class OrderedItems implements Serializable {
 	
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer orderedItemId;
 	private Integer userId;
 	private Integer productId;

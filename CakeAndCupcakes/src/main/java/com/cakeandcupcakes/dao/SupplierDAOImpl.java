@@ -15,7 +15,7 @@ public class SupplierDAOImpl implements SupplierDAO {
 	public SupplierDAOImpl() {
 
 	}
-	@Autowired
+	@Autowired(required=true)
 	private SessionFactory sessionFactory;
 
 

@@ -4,7 +4,7 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ page isELIgnored="false"%>
-<%-- <%@ include file="/WEB-INF/views/header.jsp" %> --%>
+<%@ include file="/WEB-INF/views/header.jsp" %> 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -20,7 +20,7 @@
 
 body {
 position: absolute;
-	top: 10px;
+	top: 0px;
 	left: 0px;
 	right: 10px;
 	bottom: 0px;
@@ -86,7 +86,7 @@ position: absolute;
                 </tr><br>
                  <tr>
                     
-                    <td><form:input class="form-control"  placeholder="E-mail"  type="text" path="email" /></td>
+                    <td><form:input class="form-control"  placeholder="E-mail"  type="text" path="email" id="email" /></td>
                 </tr><br>
                  <tr>
                     

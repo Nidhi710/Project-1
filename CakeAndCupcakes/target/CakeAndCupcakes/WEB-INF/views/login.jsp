@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ include file="/WEB-INF/views/header.jsp" %> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,10 +15,10 @@
 
 body {
 position: absolute;
-	top: 70px;
+	top: 0px;
 	left: 0px;
 	right: 0px;
-	bottom: 0px;
+	bottom: 10px;
 	width: auto;
 	height: auto;
 	background-image:  url("resources/images/cupcake-pp6.jpg");
@@ -61,6 +62,8 @@ position: absolute;
 		</div>
 	</div>
 </div>
+<tr>
+			<td><center><a href="users">Create an Account</a></center></td> </tr>
 </div>
 
 </body>

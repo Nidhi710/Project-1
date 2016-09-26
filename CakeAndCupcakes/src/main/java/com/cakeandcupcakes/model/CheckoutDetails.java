@@ -3,6 +3,10 @@ package com.cakeandcupcakes.model;
 import java.io.Serializable;
 
 public class CheckoutDetails implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private CartDetail cartDetail;
 	private ShippingAddress shippingAddress;
 	private BillingAddress billingAddress;

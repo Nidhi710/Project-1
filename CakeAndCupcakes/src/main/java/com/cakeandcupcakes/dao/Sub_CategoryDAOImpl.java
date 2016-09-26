@@ -16,7 +16,7 @@ public class Sub_CategoryDAOImpl implements Sub_CategoryDAO {
 	public Sub_CategoryDAOImpl() {
 
 	}
-	@Autowired
+	@Autowired(required=true)
 	private SessionFactory sessionFactory;
 
 

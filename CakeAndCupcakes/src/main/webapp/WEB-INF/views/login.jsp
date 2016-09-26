@@ -62,7 +62,15 @@ position: absolute;
 		</div>
 	</div>
 </div>
+<tr>
+			<td><center><a href="users">Create an Account</a></center></td> </tr>
 </div>
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+ <%@ include file="/WEB-INF/views/footer.jsp" %> 
 </body>
 </html>

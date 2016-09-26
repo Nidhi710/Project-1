@@ -9,19 +9,24 @@ import org.springframework.transaction.annotation.Transactional;
 import com.cakeandcupcakes.dao.CartDAOImpl;
 import com.cakeandcupcakes.model.Cart;
 
+
 @Service
 @Transactional
 public class CartService {
-	@Autowired
+	
+	@Autowired(required=true)
 	   CartDAOImpl cartDAO;
 	
 	   public List<Cart> list(){
 			return cartDAO.list();
 		}
-	   public Cart getById(Integer userid){
-			return cartDAO.getById(userid);
+	   public Cart getById(Integer userId){
+			return cartDAO.getById(userId);
 		}
-	   public int cart(Integer userid){
-		   return cartDAO.getById(userid).getCartid();
+	   public int cart(Integer userId){
+		   return cartDAO.getById(userId).getCartid();
+	   }
+	   public void saveOrUpdate(Cart cart){
+		   cartDAO.saveOrUpdate(cart);
 	   }
 }

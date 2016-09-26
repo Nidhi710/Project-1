@@ -1,5 +1,7 @@
 package com.cakeandcupcakes.model;
 
+import java.io.Serializable;
+
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,7 +16,11 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 
-public class Sub_Category {
+public class Sub_Category implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;

@@ -92,20 +92,23 @@ th {
 				</tr>
 			</thead>
 					 <tr  ng-repeat="group in cartItemdata | filter:searchKeyword">
-					    <td>{{group.cartId}}</td>
+					    <td>{{group.cartid}}</td>
 					    <td>{{group.cartItemId}}</td>
-						<td>{{group.productId}}</td>
+						<td>{{group.id}}</td>
 						<td>{{group.productName}}</td>
 						<td>{{group.productPrice}}</td>
-						<td>{{group.productQty}}</td>
+						<td>{{group.quantity}}</td>
 						<td>{{group.total}}</td>
 						<%-- <td><a href="<c:url value='sub_category/edit/{{group.id}}' />">Edit</a></td>
 						<td><a href="<c:url value='sub_category/remove/{{group.id}}' />">Delete</a></td> --%>
 					</tr> 
 			
 			</table>
+			
 		</div>
 	</c:if>
+	<tr>
+			<td><a href="proceed" class="btn btn-lg btn-success btn-block" type="submit" value="Proceed">Checkout</a></td> </tr>
 </div>
  
 			

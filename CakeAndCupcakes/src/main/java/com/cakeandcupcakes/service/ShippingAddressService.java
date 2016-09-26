@@ -12,8 +12,9 @@ import com.cakeandcupcakes.model.ShippingAddress;
 @Service
 @Transactional
 public class ShippingAddressService {
-	@Autowired	
+	@Autowired(required=true)	
 	ShippingAddressDAOImpl shippingAddressDAO;
+	
 	public List<ShippingAddress> list(){
 		return shippingAddressDAO.list();
 	}

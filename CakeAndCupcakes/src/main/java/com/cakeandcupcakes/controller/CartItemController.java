@@ -28,32 +28,53 @@ public class CartItemController {
 	@Autowired(required=true)
 	private ProductService productService;
 	
-	@RequestMapping(value = "/cartItems",method = RequestMethod.GET)
-	public String cartItem(Model model) {
-		model.addAttribute("cartItem", new CartItem());
-		model.addAttribute("cartItemList", this.cartItemService.list());
-				return "cartItem";
-				}
+	
+	 @RequestMapping("/cartItems")
+		public String cartList(Model model)
+		{
+			Authentication authentication= SecurityContextHolder.getContext().getAuthentication();
+			String username = authentication.getName();
+			
+			int userId=userService.getByName(username).getUserId();
+			
+			int cartid=cartService.getById(userId).getCartid();
+			model.addAttribute("cartItemList", this.cartItemService.getlist(cartid));
+			return "cartItem";
+		}
+	
 	
 	@RequestMapping(value="/cartItem/add" )
 	public  String addToCartItem(@ModelAttribute CartItem cartItem,@RequestParam("id")Integer id, Integer total){
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		
 		String username =authentication.getName();
-		
-		int user=userService.getByName(username).getUserId();
-		int cartId=cartService.getById(user).getCartid();
+		System.out.println("username is"+username);
+		int userId= userService.getUserId(username);
+		System.out.println("userid is"+userId);
+		int cartid=cartService.getById(userId).getCartid();
+		System.out.println("cartid is"+cartid);
 		int price=productService.get(id).getPrice();
-		cartItem.setCartId(cartId);
+		System.out.println("price is"+price);
+		cartItem.setCartid(cartid);
+		/*cartItem.setCartid(cartid);*/
 		cartItem.setProductName(productService.get(id).getName());
 		cartItem.setProductPrice(productService.get(id).getPrice());
-		cartItem.setProductId(id);
-		cartItem.setProductQty(1);
-		cartItem.setTotal(price*cartItem.getProductQty());
+		cartItem.setId(id);
+		
+		cartItem.setQuantity(1);
+		cartItem.setTotal(price*cartItem.getQuantity());
 		
 		cartItemService.saveOrUpdate(cartItem);
 		return "redirect:/cartItems";
 		}
+	
+	/*
+	@RequestMapping(value = "/cartItems",method = RequestMethod.GET)
+	public String cartItem(Model model) {
+		model.addAttribute("cartItem", new CartItem());
+		model.addAttribute("cartItemList", this.cartItemService.list());
+				return "cartItem";
+				}*/
 		
 	}
 

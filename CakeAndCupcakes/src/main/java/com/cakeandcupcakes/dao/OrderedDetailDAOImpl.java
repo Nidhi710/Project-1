@@ -13,27 +13,27 @@ import com.cakeandcupcakes.model.OrderedDetail;
 @Repository
 public class OrderedDetailDAOImpl implements OrderedDetailDAO {
 
-	@Autowired
+	@Autowired(required=true)
 	SessionFactory sessionFactory;
 
 	public OrderedDetailDAOImpl(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
 
-	@Transactional
+	
 	public void saveOrUpdate(OrderedDetail orderedDetail) {
 		sessionFactory.getCurrentSession().saveOrUpdate(orderedDetail);
 
 	}
 
-	@Transactional
+	
 	public void delete(Integer orderedDetailId) {
 		OrderedDetail orderedDetailTodelete = new OrderedDetail();
 		orderedDetailTodelete.setOrderDetailId(orderedDetailId);
 
 	}
 
-	@Transactional
+	
 public List<OrderedDetail> list() {
 		
 		@SuppressWarnings("unchecked")
@@ -45,6 +45,7 @@ public List<OrderedDetail> list() {
 		return listOrderedDetail;
 	}
 
+	
 	
 
 }

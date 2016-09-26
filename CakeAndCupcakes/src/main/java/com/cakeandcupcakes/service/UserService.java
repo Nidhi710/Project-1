@@ -15,7 +15,7 @@ import com.cakeandcupcakes.model.User;
 @Service
 @Transactional
 public class UserService {
-   @Autowired
+   @Autowired(required=true)
    UserDAOImpl userDAO;
    public List<User> list(){
 		return userDAO.list();
@@ -26,10 +26,12 @@ public class UserService {
    public User getById(Integer id){
 		return userDAO.getById(id);
 	}
-  public User getByName(String name){
-		return userDAO.getByName(name);
-	}
-  public String user (String name){
-	  return userDAO.getByName(name).getUsername();
-  }
+   public User getByName(String username){
+	   return userDAO.getByName(username);
+   }
+   
+   public int getUserId(String username) {
+	   return userDAO.getByName(username).getUserId();
+   }
+ 
 }

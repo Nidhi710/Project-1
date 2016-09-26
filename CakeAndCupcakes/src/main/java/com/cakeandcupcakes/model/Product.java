@@ -2,6 +2,8 @@ package com.cakeandcupcakes.model;
 
 
 
+import java.io.Serializable;
+
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,7 +19,11 @@ import org.springframework.web.multipart.MultipartFile;
 
 
 @Entity
-public class Product {
+public class Product implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;

@@ -9,12 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.cakeandcupcakes.model.ShippingAddress;
-@Repository
+@Repository("shippingAddressDAO")
 public class ShippingAddressDAOImpl implements ShippingAddressDAO {
 	public ShippingAddressDAOImpl() {
 
 	}
-	@Autowired
+	@Autowired(required=true)
 	private SessionFactory sessionFactory;
 
 

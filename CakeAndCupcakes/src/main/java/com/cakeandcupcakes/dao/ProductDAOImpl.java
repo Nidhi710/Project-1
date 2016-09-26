@@ -14,7 +14,7 @@ public class ProductDAOImpl implements ProductDAO {
 	public ProductDAOImpl() {
 
 	}
-	@Autowired
+	@Autowired(required=true)
 	private SessionFactory sessionFactory;
 
 

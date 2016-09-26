@@ -11,7 +11,7 @@ import com.cakeandcupcakes.model.Category;
 @Service
 @Transactional
 public class CategoryService {
-	@Autowired	
+	@Autowired(required=true)
 	CategoryDAOImpl categoryDAO;
 	public List<Category> list(){
 		return categoryDAO.list();

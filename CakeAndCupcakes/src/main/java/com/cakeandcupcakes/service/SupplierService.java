@@ -12,7 +12,7 @@ import com.cakeandcupcakes.model.Supplier;
 @Service
 @Transactional
 public class SupplierService {
-	@Autowired
+	@Autowired(required=true)
 	SupplierDAOImpl supplierDAO;
 		public List<Supplier> list(){
 			return supplierDAO.list();

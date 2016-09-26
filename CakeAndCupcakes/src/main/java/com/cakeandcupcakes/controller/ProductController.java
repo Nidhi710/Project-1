@@ -3,21 +3,16 @@ package com.cakeandcupcakes.controller;
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-
 import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
-
 import com.cakeandcupcakes.model.Product;
 import com.cakeandcupcakes.model.Sub_Category;
 import com.cakeandcupcakes.model.Supplier;

@@ -13,8 +13,11 @@
 <title>Cupcake Caffe</title>
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+ <link href="css/heroic-features.css" rel="stylesheet">
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="js/jquery.js"></script>  
+ <script src="js/bootstrap.min.js"></script>
  <style>
  
 .navbar-inverse{
@@ -108,7 +111,7 @@ footer {
          <c:forEach items="${categoryList}" var="category">
        <li class="dropdown mega-dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">${category.name}<span class="caret"></span></a>
-        <ul class="dropdown-menu mega-dropdown-menu">
+       <ul class="dropdown-menu mega-dropdown-menu">
         <li class="col-sm-3">
 						
               <c:forEach items="${category.sub_category}" var="sub_category">
@@ -124,9 +127,8 @@ footer {
      
       <ul class="nav navbar-nav navbar-right">
         <c:if test="${pageContext.request.userPrincipal.name!= null}">
-		<h4>
-			 Welcome ${pageContext.request.userPrincipal.name}
-		</h4>
+		<h4>Welcome ${pageContext.request.userPrincipal.name}</h4>
+		
 </c:if>
          
          <sec:authorize access="isAnonymous()">
@@ -208,190 +210,101 @@ footer {
     </div>
 </div>
    
-   <div class="container text">
-    <div class="pull-middle">
-  <h3>Welcome</h3><br>
-  <p>Gorgeous, handmade and stylishly decorated with a swirl of buttercream frosting and delightful toppings. we lovingly make every single cupcake by hand with the greatest care from the finest fresh and natural ingredients, including free range eggs, fresh milk and real butter - just as you would do at home, only with bigger mixing bowls! The proof is in the eating and our cakes taste as good as they look!</p>
-  <p>Our products can be personalised to add your own message in piped icing on top of lashings of tantalising buttercream frosting, and presented in luxury gift boxes with wide ribbons. They make an ideal gift and delicious treat, perfect for weddings, anniversaries, birthdays and celebratory events. Take a look, indulge your senses and try one of our deliciously moreish cupcakes.</p>
-  <p>We deliver on the date of your choice subject to availability our integrated delivery calendar displays dates for delivery when you check out, so you can relax and look forward to the arrival of your order. We usually require a minimum of 24 hours after receiving your online order for your order to be delivered.-- see Delivery for more information.</p>
-  <p>For corporate clients, we offer clients customised branding and packaging to suit your particular requirements. We can supply large volumes for events as well as promotional campaigns for corporate clients. We have an outstanding reputation for our customer service and the quality of our products.</p>
- </div>
- </div>
- <br>
- 
-  <div class="alert alert-warning"><center><h2>Beautiful handmade cupcakes</h2></center><br></div>
-  <div class="container text-center">
-  <div class="row">
-    <div class="col-sm-6">
-      <img src="resources/images/5.jpg" class="img-responsive" style="width:100%" alt="Image">
-       <h5>Seasonal</h5>
-      <p>Designed with flair and created with loving attention to details, our seasonal range for all those special times of year is not to be missed!</p>
+   <div class="container">
+
+        <!-- Jumbotron Header -->
+        <header class="jumbotron hero-spacer">
+            <h1>A Warm Welcome!</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
+            <p><a href="aboutus" class="btn btn-primary btn-large">Call to action!</a>
+            </p>
+        </header>
+
+        <hr>
+
+        <!-- Title -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>Latest Features</h3>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Page Features -->
+        <div class="row text-center">
+
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                     <img style="width:350px;height:222px" src="resources/img/${product.id}.jpg" class="img-responsive"  alt="">
+                    <div class="caption">
+                    
+                        <h3>Feature Label</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <p>
+                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <img src="http://placehold.it/800x500" alt="">
+                    <div class="caption">
+                        <h3>Feature Label</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <p>
+                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <img src="http://placehold.it/800x500" alt="">
+                    <div class="caption">
+                        <h3>Feature Label</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <p>
+                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <img src="http://placehold.it/800x500" alt="">
+                    <div class="caption">
+                        <h3>Feature Label</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <p>
+                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Your Website 2014</p>
+                </div>
+            </div>
+        </footer>
+
     </div>
-    
-     
-       
-    <div class="col-sm-6">
-      <img src="resources/images/6.jpg" class="img-responsive" style="width:100%" alt="Image">
-      <h5>Parties</h5>
-      <p>Make an order with a fabulous selection of cupcakes, freshly roasted almond cupcakes.
-      </div>
-    
-  </div>
-</div><br>
- 
-   <marquee style="  scrollamount="6" scrolldelay="90" direction="left" onmouseover="this.stop()" onmouseout="this.start()">
-<%-- <a href="productlist?search=${sub_category.id}">${sub_category.name}</a> --%>
-<ul class="list-inline list-unstyled r">
+    <!-- /.container -->
 
-<li class="productbox">
-    <img src="resources/images/summer-mr-whippy-close-up.jpg" class="img-responsive">
-    <div class="producttitle"> Summer Mr Whippy</div> 
-</li> 
-<li class="productbox">
-    <img src="resources/images/red-velvet-close-up.jpg" class="img-responsive">
-    <div class="producttitle"> Red Velvet</div> 
-</li>
-<li class="productbox">
-    <img src="resources/images/cookies-and-cream-close-up.jpg" class="img-responsive">
-    <div class="producttitle"> Cookies And Cream</div> 
-</li>
-<li class="productbox">
-    <img src="resources/images/blueberry-close-up.jpg" class="img-responsive">
-    <div class="producttitle"> Blueberry</div> 
-</li>
-<li class="productbox">
-    <img src="resources/images/blues-close-up.jpg" class="img-responsive">
-    <div class="producttitle"> Blues</div> 
-</li>
-<li class=" productbox">
-    <img src="resources/images/easter-2016-close-up.jpg" class="img-responsive">
-    <div class="producttitle">Easter</div> 
-</li>
-<li class="productbox">
-    <img src="resources/images/rocky-mountain-close-up.jpg" class="img-responsive">
-    <div class="producttitle"> Rocky Mountain</div> 
-</li>
-<li class="productbox">
-    <img src="resources/images/salted-caramel-close-up.jpg" class="img-responsive">
-    <div class="producttitle"> Salted Caramel</div> 
-</li>
-<li class="productbox">
-    <img src="resources/images/sex-and-the-city-chocolate-close-up.jpg" class="img-responsive">
-    <div class="producttitle"> Sex And The City Chocolate</div> 
-</li>
-<li class="productbox">
-    <img src="resources/images/raspberry-close-up_1 (1).jpg" class="img-responsive">
-    <div class="producttitle"> Raspberry</div> 
-</li>
-<li class="productbox">
-    <img src="resources/images/lemon-close-up.jpg" class="img-responsive">
-    <div class="producttitle">Lemon </div> 
-</li>
- 
-</ul></a><br>
-</marquee>
-
-<div class="container text-center">    
-<div class="row">
-<div class="col-sm-8">
-     
-      <h2>Coporate</h2>
-      <p>We have a leading reputation for promotional products decorated with logos and company colours. Exceptional quality and service is assured with our branded cupcakes. The yummy and extremely tasty cupcakes. We use only the freshest ingredients and offer a wide, ever growing range of flavours  - you can even create your own cupcake! .</p>
-      </div>
-
-<section id="wrapper">
-	
-		<div class="col-md-4">
-   			<div id="private_label" class="panel panel-default"  class="carousel slide" data-ride="carousel">
-				<div class="alert alert-warning"><h4>Order Logo Cupcakes!</h4></div>	
-	           
-              <div class="panel-body" style="padding: 0px;">
-				
-						<div class="carousel-inner">
-				
-					
-							<ol class="carousel-indicators">
-								<li data-target="#private_label" data-slide-to="0" class="active"></li>
-								<li data-target="#private_label" data-slide-to="1"></li>
-								<li data-target="#private_label" data-slide-to="2"></li>
-								<!-- <li data-target="#private_label" data-slide-to="3"></li>
-								<li data-target="#private_label" data-slide-to="4"></li>
-								<li data-target="#private_label" data-slide-to="5"></li>
-								<li data-target="#private_label" data-slide-to="6"></li>
-								<li data-target="#private_label" data-slide-to="7"></li> -->
-							</ol>
-					
-						
-
-							<div class="item active">
-								<img src="resources/images/corporate-cupcakes-1.jpg" alt="1 slide">
-							</div>
-							
-							<div class="item">
-								<img src="resources/images/corporate-cupcakes-2.jpg" alt="2 slide">
-							</div>
-							
-							<div class="item">
-								<img src="resources/images/corporate-cupcakes-3.jpg" alt="3 slide">
-							</div>	
-												
-						</div>	
-										
-				     </div>
-				</div>
-			</div>				
-		</div>
-					
- </section>
- 
-  </div>
-  
-    
-
-  
- <footer class="container-fluid text">
    
-    <div class="row">
-    <div class="col-sm-4">
-    
-   <h4>Our Philosophy</h4>
-  <p>We produce cupcakes and other baked goods from the finest carefully sourced ingredients. We don't outsource our baking or decorating everything is done by our fantastic production team.</p>
-  <p>Our philosophy is to create beautiful handmade cupcakes that taste as good as they look. Try one and see for yourself!</p><br>
-   <i class="fa fa-facebook-square" style="font-size:35px"></i>
-	<i class="fa  fa-google-plus-square" style="font-size:35px"></i>
-	<i class="fa fa-twitter-square" style="font-size:35px"></i>
-	<i class="fa  fa-linkedin-square" style="font-size:35px"></i> 
-   </div>
-   
-    <div class="col-sm-4">
-    <h4>Key Featurs</h4>
-    <ul class>
-    <li>Perfect for gifts and parties</li>
-    <li>Bespoke options for corporate events</li>
-    <li>Add a gift message to your order</li>
-</ul>
-</div>
-
-	<div class="col-sm-4">
-    <h4>Contact Us</h4>
-    <i class="fa    fa-phone" style="font-size:24px;"></i>       Call us on:<br>
-    <i class="fa   fa-envelope" style="font-size:24px;"></i>     Email us on:<br> 
-    <i class="fa   fa-facebook" style="font-size:24px;"></i>   Visit us on Facebook<br>
-    <i class="fa   fa-twitter" style="font-size:24px;"></i>    Join us on Twitter <br>
-    </div>
-    
-</div> 
-</footer> 
-<div id="footer">
-  <div class="container">
-  </div>
-</div>
-
- <ul class="nav pull-right scroll-top">
-  <li><a href="#" title="Scroll to top"><i class="glyphicon glyphicon-chevron-up"></i></a></li>
-</ul> 
-
 
 </body>
-</html>
+
 </html>

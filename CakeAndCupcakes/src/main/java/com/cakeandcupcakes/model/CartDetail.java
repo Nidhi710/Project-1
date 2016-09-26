@@ -1,11 +1,10 @@
 package com.cakeandcupcakes.model;
 
 import java.io.Serializable;
-import java.util.UUID;
-
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.stereotype.Component;
 @Entity
@@ -16,8 +15,9 @@ public class CartDetail implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer cardDetailId;
-	private Integer customerId;
+	private Integer userId;
 	@NotBlank(message="Card number must be entered")
 	private String cardNumber;
 	@NotBlank(message="Expiry month must be selected")
@@ -29,17 +29,18 @@ public class CartDetail implements Serializable {
 	@NotBlank(message="Name must be entered")
 	private String nameOnCard;
 	private double totalCost;
+	
 	public Integer getCardDetailId() {
 		return cardDetailId;
 	}
 	public void setCardDetailId(Integer cardDetailId) {
 		this.cardDetailId = cardDetailId;
 	}
-	public Integer getCustomerId() {
-		return customerId;
+	public Integer getUserId() {
+		return userId;
 	}
-	public void setCustomerId(Integer customerId) {
-		this.customerId = customerId;
+	public void setUserId(Integer userId) {
+		this.userId = userId;
 	}
 	public String getCardNumber() {
 		return cardNumber;
@@ -77,7 +78,7 @@ public class CartDetail implements Serializable {
 	public void setTotalCost(double totalCost) {
 		this.totalCost = totalCost;
 	}
-
+	
 	
 
 }

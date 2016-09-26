@@ -4,6 +4,6 @@ import com.cakeandcupcakes.model.CartDetail;
 
 public interface CartDetailDAO {
 
-	void saveOrUpdate(CartDetail cartDetail);
+	public void saveOrUpdate(CartDetail cartDetail);
 
 }

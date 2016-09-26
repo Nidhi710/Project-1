@@ -6,6 +6,8 @@ import com.cakeandcupcakes.model.Cart;
 
 
 public interface CartDAO {
-	public Cart getById( Integer id);
+	
+	public void saveOrUpdate(Cart cart);
+   	public Cart getById( Integer id);
 	public List<Cart> list();
 }

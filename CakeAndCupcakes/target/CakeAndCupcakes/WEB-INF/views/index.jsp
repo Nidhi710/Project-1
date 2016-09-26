@@ -23,6 +23,15 @@
       border-radius: 0;
       color: #c81474; */
 }
+h5{
+color:#cc0066;
+/* font-style: bold; */
+font-size: 20px;
+	font-style: bold
+}
+h4{
+color:grey;
+}
  h3 {
     color: #FF9900;
     font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
@@ -32,6 +41,12 @@
 	font-weight: 100;
 	line-height: 53.2px;
 }
+h2{
+color:red;
+font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
+font-size: 47px;
+	font-style: italic;
+	}
 p{
  color: #B2801A;
  font-family: Arial;
@@ -79,6 +94,7 @@ footer {
 
  <nav class="navbar navbar-inverse">
     <div class="navbar-header">
+    <a class="navbar-brand" href="/CakeAndCupcakes/">Cupcake Caffe</a>
     	<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
 			<span class="sr-only">Toggle navigation</span>
 			<span class="icon-bar"></span>
@@ -92,7 +108,7 @@ footer {
          <c:forEach items="${categoryList}" var="category">
        <li class="dropdown mega-dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">${category.name}<span class="caret"></span></a>
-        <ul class="dropdown-menu mega-dropdown-menu">
+       <ul class="dropdown-menu mega-dropdown-menu">
         <li class="col-sm-3">
 						
               <c:forEach items="${category.sub_category}" var="sub_category">
@@ -108,9 +124,8 @@ footer {
      
       <ul class="nav navbar-nav navbar-right">
         <c:if test="${pageContext.request.userPrincipal.name!= null}">
-		<h4>
-			 Welcome ${pageContext.request.userPrincipal.name}
-		</h4>
+		<h4>Welcome ${pageContext.request.userPrincipal.name}</h4>
+		
 </c:if>
          
          <sec:authorize access="isAnonymous()">
@@ -150,6 +165,7 @@ footer {
     </div>
 </nav>
  </sec:authorize> 
+ 
 <br>
 <div class="container">
     <!-- Indicators -->
@@ -199,8 +215,28 @@ footer {
   <p>We deliver on the date of your choice subject to availability our integrated delivery calendar displays dates for delivery when you check out, so you can relax and look forward to the arrival of your order. We usually require a minimum of 24 hours after receiving your online order for your order to be delivered.-- see Delivery for more information.</p>
   <p>For corporate clients, we offer clients customised branding and packaging to suit your particular requirements. We can supply large volumes for events as well as promotional campaigns for corporate clients. We have an outstanding reputation for our customer service and the quality of our products.</p>
  </div>
+ </div>
  <br>
  
+  <div class="alert alert-warning"><center><h2>Beautiful handmade cupcakes</h2></center><br></div>
+  <div class="container text-center">
+  <div class="row">
+    <div class="col-sm-6">
+      <img src="resources/images/5.jpg" class="img-responsive" style="width:100%" alt="Image">
+       <h5>Seasonal</h5>
+      <p>Designed with flair and created with loving attention to details, our seasonal range for all those special times of year is not to be missed!</p>
+    </div>
+    
+     
+       
+    <div class="col-sm-6">
+      <img src="resources/images/6.jpg" class="img-responsive" style="width:100%" alt="Image">
+      <h5>Parties</h5>
+      <p>Make an order with a fabulous selection of cupcakes, freshly roasted almond cupcakes.
+      </div>
+    
+  </div>
+</div><br>
  
    <marquee style="  scrollamount="6" scrolldelay="90" direction="left" onmouseover="this.stop()" onmouseout="this.start()">
 <%-- <a href="productlist?search=${sub_category.id}">${sub_category.name}</a> --%>
@@ -266,7 +302,7 @@ footer {
 	
 		<div class="col-md-4">
    			<div id="private_label" class="panel panel-default"  class="carousel slide" data-ride="carousel">
-				<div class="alert alert-warning"><h2>Corporate</h2></div>	
+				<div class="alert alert-warning"><h4>Order Logo Cupcakes!</h4></div>	
 	           
               <div class="panel-body" style="padding: 0px;">
 				
@@ -308,6 +344,10 @@ footer {
  </section>
  
   </div>
+  
+    
+
+  
  <footer class="container-fluid text">
    
     <div class="row">

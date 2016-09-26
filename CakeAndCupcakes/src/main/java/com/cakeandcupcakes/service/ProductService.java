@@ -11,7 +11,7 @@ import com.cakeandcupcakes.model.Product;
 @Service
 @Transactional
 public class ProductService {
-	@Autowired	
+	@Autowired(required=true)
 	ProductDAOImpl productDAO;
 	public List<Product> list(){
 		return productDAO.list();

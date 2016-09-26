@@ -43,14 +43,31 @@ h3 {
 </style>
 </head>
 <body ng-app="myProduct" ng-controller="productDisplay" >
-	<div  class="container">
-		<h1 class="title">Product Display</h1>
-		<hr>
-
-		<div class="row">
-			
-			<div  class="col-lg-6" ng-repeat="group in product" >
+	<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+			<div class="col-xs-12 col-sm-3 col-md-12">
+				<div  class="col-lg-4" ng-repeat="group in product" >
 				<img  src="{{group.img}}" />
+				<div> <td>{{group.name}}</td>
+				      <td>{{group.desc}}</td>
+				      <td>{{group.price}}</td>
+				      <td></td>
+					<div class="caption">
+						<div class="row">
+							
+							<div class="col-md-8 col-sm-8 col-xs-8">
+								<a href="#" class="btn btn-success btn-product"><span class="glyphicon glyphicon-shopping-cart"></span> Add 2 Cart</a>
+    						     <a href="<c:url value='/productview{{group.id}}' />">View</a>
+    						     <a href="cartItem/add?id={{product.id}}" class="btn btn-success btn-product"><input class="glyphicon glyphicon-shopping-cart" type="submit" value="Add to Cart"/></a></td>
+    						</div>
+						</div>
+
+						<p> </p>
+					</div>
+				</div>
+			</div>
+			
 			</div>
 			 
 </div>

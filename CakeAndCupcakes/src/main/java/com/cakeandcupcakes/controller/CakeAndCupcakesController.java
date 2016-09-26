@@ -26,7 +26,9 @@ public class CakeAndCupcakesController {
 	return "index";
 	}
 	
-	
-	
+	@RequestMapping("/aboutus")
+	public String getaboutus(){
+		return"aboutus";
+	}
 		
 }

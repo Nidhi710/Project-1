@@ -1,5 +1,7 @@
 package com.cakeandcupcakes.dao;
 
+import java.util.List;
+
 import com.cakeandcupcakes.model.BillingAddress;
 
 public interface BillingAddressDAO {
@@ -9,5 +11,5 @@ public interface BillingAddressDAO {
 	void deleteBillingAddress(Integer billingAddressId);
 
 	BillingAddress getBillingAddress(Integer billingAddressId);
-
+	public List<BillingAddress> list();
 }
